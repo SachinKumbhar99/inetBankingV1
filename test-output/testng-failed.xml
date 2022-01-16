@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [InetBankingV1]">
+  <parameter name="browser" value="chrome"/>
+  <listeners>
+    <listener class-name="com.inetBankingV1.Utilities.Reporting"/>
+  </listeners>
+  <test name="BankingApp Test">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="com.inetBankingV1.TestCases.TC_LoginTest_001"/>
+      <class name="com.inetBankingV1.TestCases.TC_LoginTDD_002"/>
+      <class name="com.inetBankingV1.TestCases.TC_AddCustomerTest_003"/>
+    </classes>
+  </test> <!-- BankingApp Test -->
+  <test name="BankingApp Test(failed)">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="com.inetBankingV1.TestCases.TC_AddCustomerTest_003">
+        <methods>
+          <include name="setup"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.inetBankingV1.TestCases.TC_AddCustomerTest_003 -->
+      <class name="com.inetBankingV1.TestCases.TC_LoginTest_001">
+        <methods>
+          <include name="setup"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.inetBankingV1.TestCases.TC_LoginTest_001 -->
+      <class name="com.inetBankingV1.TestCases.TC_LoginTDD_002">
+        <methods>
+          <include name="LoginTDD" invocation-numbers="1 3"/>
+          <include name="setup"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.inetBankingV1.TestCases.TC_LoginTDD_002 -->
+    </classes>
+  </test> <!-- BankingApp Test(failed) -->
+</suite> <!-- Failed suite [InetBankingV1] -->
